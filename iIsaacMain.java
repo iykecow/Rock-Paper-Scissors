@@ -23,37 +23,43 @@ public class iIsaacMain implements Player
      */
 
     private static int counter = 0;
-    private static int chooser = 0;
+    private static int chooser = 3;
 
     public String move(String [] myMoves, String [] opponentMoves, int myScore, int opponentScore)
     {
 
-        if (opponentScore>=myScore) {
+        if (opponentScore>counter) {
             chooser++;
+            counter = opponentScore;
             if (chooser%3==0) {
                 return "r";
             }
             else if (chooser%3==1) {
                 return "p";
             }
-            else if (chooser%3==2) {
+            else {
                 return "s";
             }
         }
         else {
+            counter = opponentScore;
             if (chooser%3==0) {
                 return "r";
             }
             else if (chooser%3==1) {
                 return "p";
             }
-            else if (chooser%3==2) {
+            else {
                 return "s";
             }
         }
-        return "p";
-
     }
+
+    public int getChooser()
+    {
+        return chooser;
+    }
+
     /**
      * Returns the name of the player
      * 
