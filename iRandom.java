@@ -8,9 +8,9 @@ import java.util.*;
  * You can create additional methods but must have the move method
  * 
  */
-public class PlayerExample implements Player
+public class iRandom implements Player
 {
-    private static String name = "PlayerExample";
+    private static String name = "Random";
     /**
      * An example of a method - replace this comment with your own
      * You must create some kind of logic of what to play against your opponent...start thinking!
@@ -23,8 +23,16 @@ public class PlayerExample implements Player
      */
     public String move(String [] myMoves, String [] opponentMoves, int myScore, int opponentScore)
     {
-        
-        return " ";
+        int rand = (int)(Math.random()*3);
+        if (rand==0) {
+            return "r"; 
+        }
+        else if (rand==1) {
+            return "p";
+        }
+        else  {
+            return "s";
+        }
     }
     /**
      * Returns the name of the player
