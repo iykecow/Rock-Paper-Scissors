@@ -11,8 +11,11 @@ public class Main
         boolean printsRun = false;   //printsRun is a boolean set to display moves as game goes, used for debugging
         
         //add players to game
-        players[0] = new ionlyPaper();
-        players[1] = new iRandom();
+        // players[0] = new ionlyPaper();
+        // // players[0] = new iRandom();
+        // // players[0] = new ionlyRock();
+        players[0] = new ionlyScissors();
+        players[1] = new iIsaacMain();
    
         //construct the game with the classes in the players array, calls on play and displays the score
         //DO NOT CHANGE

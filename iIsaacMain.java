@@ -10,7 +10,7 @@ import java.util.*;
  */
 public class iIsaacMain implements Player
 {
-    private static String name = "Isaac";
+    private static String name = "Isaac Kao";
     /**
      * An example of a method - replace this comment with your own
      * You must create some kind of logic of what to play against your opponent...start thinking!
@@ -21,21 +21,38 @@ public class iIsaacMain implements Player
      *              "s" - scissors
      *              anything else - forfeit the turn
      */
+
+    private static int counter = 0;
+    private static int chooser = 0;
+
     public String move(String [] myMoves, String [] opponentMoves, int myScore, int opponentScore)
     {
-        int rand = (int)(Math.random()*3);
-        if (rand==0) {
-            //System.out.println("r");
-            return "r"; 
+
+        if (opponentScore>=myScore) {
+            chooser++;
+            if (chooser%3==0) {
+                return "r";
+            }
+            else if (chooser%3==1) {
+                return "p";
+            }
+            else if (chooser%3==2) {
+                return "s";
+            }
         }
-        else if (rand==1) {
-            //System.out.println("p");
-            return "p";
+        else {
+            if (chooser%3==0) {
+                return "r";
+            }
+            else if (chooser%3==1) {
+                return "p";
+            }
+            else if (chooser%3==2) {
+                return "s";
+            }
         }
-        else  {
-            //System.out.println("s");
-            return "s";
-        }
+        return "p";
+
     }
     /**
      * Returns the name of the player
